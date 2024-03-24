@@ -25,7 +25,7 @@ RUN apk --no-cache add ca-certificates tzdata
 
 # 创建目录并写入配置文件
 RUN mkdir -p /app/coze-discord-proxy/data/config && \
-    echo "$BOT_CONFIG" > /app/coze-discord-proxy/data/config/bot_config.json
+    printf  "$BOT_CONFIG" > /app/coze-discord-proxy/data/config/bot_config.json
 
 # 从构建阶段复制可执行文件
 COPY --from=builder /coze-discord-proxy /coze-discord-proxy
