@@ -298,6 +298,12 @@ const docTemplate = `{
                 "object": {
                     "type": "string"
                 },
+                "suggestions": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
                 "system_fingerprint": {
                     "type": "string"
                 },
@@ -343,6 +349,20 @@ const docTemplate = `{
                 }
             }
         },
+        "model.OpenAIImagesGenerationDataResponse": {
+            "type": "object",
+            "properties": {
+                "b64_json": {
+                    "type": "string"
+                },
+                "revised_prompt": {
+                    "type": "string"
+                },
+                "url": {
+                    "type": "string"
+                }
+            }
+        },
         "model.OpenAIImagesGenerationRequest": {
             "type": "object",
             "properties": {
@@ -353,6 +373,9 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "prompt": {
+                    "type": "string"
+                },
+                "response_format": {
                     "type": "string"
                 }
             }
@@ -369,12 +392,13 @@ const docTemplate = `{
                 "data": {
                     "type": "array",
                     "items": {
-                        "type": "object",
-                        "properties": {
-                            "url": {
-                                "type": "string"
-                            }
-                        }
+                        "$ref": "#/definitions/model.OpenAIImagesGenerationDataResponse"
+                    }
+                },
+                "suggestions": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
                     }
                 }
             }

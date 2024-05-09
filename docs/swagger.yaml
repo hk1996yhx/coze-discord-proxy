@@ -42,6 +42,10 @@ definitions:
         type: string
       object:
         type: string
+      suggestions:
+        items:
+          type: string
+        type: array
       system_fingerprint:
         type: string
       usage:
@@ -71,6 +75,15 @@ definitions:
       content:
         type: string
     type: object
+  model.OpenAIImagesGenerationDataResponse:
+    properties:
+      b64_json:
+        type: string
+      revised_prompt:
+        type: string
+      url:
+        type: string
+    type: object
   model.OpenAIImagesGenerationRequest:
     properties:
       channelId:
@@ -78,6 +91,8 @@ definitions:
       model:
         type: string
       prompt:
+        type: string
+      response_format:
         type: string
     type: object
   model.OpenAIImagesGenerationResponse:
@@ -88,10 +103,11 @@ definitions:
         type: boolean
       data:
         items:
-          properties:
-            url:
-              type: string
-          type: object
+          $ref: '#/definitions/model.OpenAIImagesGenerationDataResponse'
+        type: array
+      suggestions:
+        items:
+          type: string
         type: array
     type: object
   model.OpenAIMessage:

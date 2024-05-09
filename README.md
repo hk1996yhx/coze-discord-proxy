@@ -10,7 +10,7 @@ _代理`Discord`对话`Coze-Bot`，实现以API形式请求GPT4模型，提供�
 
 _觉得有点意思的话 别忘了点个🌟_
 
-📄<a href="https://cdp-docs.pages.dev" style="font-size: 15px;">CDP项目文档站</a>(正在补全中...)
+📄<a href="https://cdp-docs.pages.dev" style="font-size: 15px;">CDP项目文档站</a>
 
 🐞<a href="https://t.me/+LGKwlC_xa-E5ZDk9" style="font-size: 15px;">CDP项目-交流群</a>(群内有详细教程)
 
@@ -120,7 +120,7 @@ deanxv/coze-discord-proxy
 
 其中`USER_AUTHORIZATION`,`BOT_TOKEN`,`GUILD_ID`,`COZE_BOT_ID`,`PROXY_SECRET`,`CHANNEL_ID`修改为自己的。
 
-如果上面的镜像无法拉取,可以尝试使用 GitHub 的 Docker 镜像,将上面的 `deanxv/coze-discord-proxy`替换为 `ghcr.io/deanxv/coze-discord-proxy` 即可。
+如果上面的镜像无法拉取,可以尝试使用 GitHub 的 Docker 镜像,将上面的`deanxv/coze-discord-proxy`替换为`ghcr.io/deanxv/coze-discord-proxy`即可。
 
 ### 部署到第三方平台
 

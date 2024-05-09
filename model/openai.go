@@ -35,6 +35,7 @@ type OpenAIChatCompletionResponse struct {
 	Choices           []OpenAIChoice `json:"choices"`
 	Usage             OpenAIUsage    `json:"usage"`
 	SystemFingerprint *string        `json:"system_fingerprint"`
+	Suggestions       []string       `json:"suggestions"`
 }
 
 type OpenAIChoice struct {
@@ -62,16 +63,22 @@ type OpenAIDelta struct {
 
 type OpenAIImagesGenerationRequest struct {
 	OpenAIChatCompletionExtraRequest
-	Model  string `json:"model"`
-	Prompt string `json:"prompt"`
+	Model          string `json:"model"`
+	Prompt         string `json:"prompt"`
+	ResponseFormat string `json:"response_format"`
 }
 
 type OpenAIImagesGenerationResponse struct {
-	Created    int64 `json:"created"`
-	DailyLimit bool  `json:"dailyLimit"`
-	Data       []struct {
-		URL string `json:"url"`
-	} `json:"data"`
+	Created     int64                                 `json:"created"`
+	DailyLimit  bool                                  `json:"dailyLimit"`
+	Data        []*OpenAIImagesGenerationDataResponse `json:"data"`
+	Suggestions []string                              `json:"suggestions"`
+}
+
+type OpenAIImagesGenerationDataResponse struct {
+	URL           string `json:"url"`
+	RevisedPrompt string `json:"revised_prompt"`
+	B64Json       string `json:"b64_json"`
 }
 
 type OpenAIGPT4VImagesReq struct {
